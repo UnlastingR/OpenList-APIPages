@@ -16,8 +16,22 @@ if ! [[ -t 0 ]]; then
   exit 1
 fi
 
+# Validate Cloudflare authentication before prompting for any credentials.
+# SSH login shells may not inherit the DevSpace-injected API token.
+if ! wrangler whoami >/dev/null 2>&1; then
+  cat >&2 <<'EOF'
+Cloudflare authentication is not available in this shell.
+Use an authenticated DevSpace terminal or add googleui_key through the
+Cloudflare Dashboard > Workers & Pages > fyzure-openlist-oauth >
+Settings > Variables and Secrets.
+No OAuth client credentials were requested or uploaded.
+EOF
+  exit 2
+fi
+
 printf 'Configuring OAuth client secrets for Cloudflare Worker: %s\n' "$worker_name"
 printf 'Google Web client redirect URI: %s\n' 'https://oauth-api.fyzure.fyi/googleui/callback'
+printf 'Use the OpenList-APIPages-Web client, not RS-rclone-Desktop.\n'
 
 read -r -p 'Paste Google Web Client ID: ' oauth_client_id
 if [[ "$oauth_client_id" != *.apps.googleusercontent.com ]]; then

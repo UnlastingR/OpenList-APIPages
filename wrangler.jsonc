@@ -7,7 +7,7 @@
     "nodejs_compat"
   ],
   "vars": {
-    "MAIN_URLS": "api.oauth.fyzure.fyi",
+    "MAIN_URLS": "oauth-api.fyzure.fyi",
     "PROXY_API": ""
   },
   "assets": {

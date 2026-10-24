@@ -1,37 +1,14 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "openlist-apis-page",
+  "name": "fyzure-openlist-oauth",
   "main": "src/cfapp.ts",
   "compatibility_date": "2025-05-25",
   "compatibility_flags": [
     "nodejs_compat"
   ],
   "vars": {
-    "MAIN_URLS": "api.example.com",
-    "PROXY_API": "",
-    "onedrive_uid": "*****************************",
-    "onedrive_key": "*****************************",
-    "alicloud_uid": "*****************************",
-    "alicloud_key": "*****************************",
-    "baiduyun_uid": "*****************************",
-    "baiduyun_key": "*****************************",
-    "baiduyun_ext": "*****************************",
-    "cloud115_uid": "*****************************",
-    "cloud115_key": "*****************************",
-    "googleui_uid": "*****************************",
-    "googleui_key": "*****************************",
-    "yandexui_uid": "*****************************",
-    "yandexui_key": "*****************************",
-    "dropboxs_uid": "*****************************",
-    "dropboxs_key": "*****************************",
-    "quarkpan_uid": "*****************************",
-    "quarkpan_key": "*****************************",
-    "cloud123_uid": "*****************************",
-    "cloud123_key": "*****************************",
-    "cloud123_url": "*****************************"
-  },
-  "build": {
-    "command": "npm run build-web"
+    "MAIN_URLS": "api.oauth.fyzure.fyi",
+    "PROXY_API": ""
   },
   "assets": {
     "directory": "./public",
